@@ -31,8 +31,15 @@ public class GetInfo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+     
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String gender = request.getParameter("gender");
+        String major = request.getParameter("major");
+        String interests = request.getParameter("interests");
+        
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -48,12 +55,12 @@ public class GetInfo extends HttpServlet {
             out.println("<body>");
             out.println("<h2>Reading Personal Information</h2>");
             out.println("<table>");
-            out.println("<tr><th>ID</th><td>IT90078</td></tr>");
-            out.println("<tr><th>Name</th><td>Nguyen Thi Kieu Linh</td></tr>");
-            out.println("<tr><th>Email</th><td>ntkl@yahoo.com.vn</td></tr>");
-            out.println("<tr><th>Gender</th><td>Female</td></tr>");
-            out.println("<tr><th>Major</th><td>Business Administration</td></tr>");
-            out.println("<tr><th>Interesting Field</th><td>Reading books, Swimming, etc.</td></tr>");
+            out.println("<tr><th>ID</th><td>" + id + "</td></tr>");
+            out.println("<tr><th>Name</th><td>" + name + "</td></tr>");
+            out.println("<tr><th>Email</th><td>" + email + "</td></tr>");
+            out.println("<tr><th>Gender</th><td>" + gender + "</td></tr>");
+            out.println("<tr><th>Major</th><td>" + major + "</td></tr>");
+            out.println("<tr><th>Interesting Field</th><td>" + interests + "</td></tr>");
             out.println("</table>");
             out.println("</body>");
             out.println("</html>");
